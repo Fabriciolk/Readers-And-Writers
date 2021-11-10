@@ -1,0 +1,43 @@
+#install.packages("tidyverse")
+library(tidyverse)
+
+# Set current directory to parent directory
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+setwd("..")
+
+##################################
+#                                #
+#                                #
+#    Data Frame and Variables    #        
+#                                #
+#                                #
+##################################
+
+
+
+# Read main csv file
+difference_RW_and_BS <- read.csv("results.csv")
+readers_amount <- NULL
+runtime_diffence <- NULL
+
+for (column in c(1:101)) {
+    runtime_diffence <- append(runtime_diffence, difference_RW_and_BS[,column])
+    readers_amount <- append(readers_amount, rep(column - 1, 100))
+}
+
+
+##################################
+#                                #
+#                                #
+#    Simple Linear Regression    #        
+#                                #
+#                                #
+##################################
+
+
+plot(readers_amount, runtime_diffence, xlab = "readers amount", ylab = "difference runtime RW - BS", type = "p", pch = 20)
+plot(qplot(readers_amount, runtime_diffence, xlab = "quantidade de leitores", ylab = "diferença no tempo de execução", size = I(1)) + 
+         scale_x_continuous(n.breaks = 20) + 
+         scale_y_continuous(n.breaks = 10))
+
+
