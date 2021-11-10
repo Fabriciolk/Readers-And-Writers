@@ -58,7 +58,7 @@ public class SO_EP_II
 
                 // Linha de controle para saber quantas linhas foi escrita no dataset.
 
-                System.out.println("Writing line " + (line + 1) + " in all CSV files ... Please don't open those files yet.");
+                System.out.println("Writing line " + (line + 1) + "/" + numberLines + " in all CSV files... Please, do not open those files yet.");
 
                 // Proporção de leitores e escritores: 0x100, 1x99, 2x98, ..., 99x1, 100x0
 
