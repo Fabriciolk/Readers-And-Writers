@@ -23,6 +23,9 @@ public class SO_EP_II
     public static void main(String[] args)
     {
         String fileDir = System.getProperty("user.dir") + "\\File\\bd.txt";
+        if (System.getProperty("os.name").equals("Linux")) {
+            fileDir = System.getProperty("user.dir") + "/File/bd.txt";
+        }
         Map<String, Map<Integer, Integer>> entitiesAmount;
         Map<String, Map<Integer, Integer>> exclusiveEntitiesAmount;
         int numberLines = 100;
