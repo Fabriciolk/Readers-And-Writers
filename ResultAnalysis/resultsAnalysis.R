@@ -111,7 +111,8 @@ plot(ggplot(data = data.frame(readers_amount_unic, average_all_difference), aes(
          ylab("Diferença de tempo médio de execução") +
          geom_point(size = 1) + 
          scale_x_continuous(n.breaks = 20) + 
-         scale_y_continuous(n.breaks = 15, limits = c(-0.2, 0.1)))
+         # scale_y_continuous(n.breaks = 15, limits = c(-0.2, 0.1)) Fabricio
+         scale_y_continuous(n.breaks = 15, limits = c(-1.75, -1.0)))
 
 # Graphic [quantidade de leitores]x[tempro médio de execução para L&E, tempo médio de execução para Exclusive]
 # red: Leitores e Escritores
@@ -144,7 +145,8 @@ plot(ggplot(data = data.frame(readers_amount_unic, average_all_runtime_RW), aes(
          geom_point(size = 1, color = "red") +
          geom_point(data = data.frame(readers_amount_unic, average_all_runetime_Exclusive), y = average_all_runetime_Exclusive, size = 1, color = "blue") + 
          scale_x_continuous(n.breaks = 20) + 
-         scale_y_continuous(n.breaks = 15, limits = c(4.19, 4.4)))
+         #scale_y_continuous(n.breaks = 15, limits = c(4.19, 4.4)) Fabricio
+         scale_y_continuous(n.breaks = 15, limits = c(5.0, 7.0)))
 
 exclusive_pior <- 0
 
